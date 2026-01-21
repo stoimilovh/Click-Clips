@@ -1,6 +1,3 @@
-const clicksPages = ['Egypt.html', 'Greece.html', 'Vienna.html', 'Skopje.html',
-                    'Fiona.html', 'Fine%20Dining.html', 'Karolina%20Gocheva.html', 'Club.html', 'Nadalina.html', 'Sofia.html'];
-
 document.addEventListener('DOMContentLoaded', loadHeaderFooter);
 document.addEventListener('DOMContentLoaded', setActiveLink);
 
