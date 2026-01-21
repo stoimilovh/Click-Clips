@@ -1,0 +1,9 @@
+<div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center">
+      <div class="card" style="text-align: center;">
+        <img class="card-img-top" src="photos/Cards/skopje.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="h5">mosaics from Skopje</h5>
+          <a href="Skopje.html" class="btn btn-dark">Skopje, Macedonia</a>
+        </div>
+      </div>
+    </div>

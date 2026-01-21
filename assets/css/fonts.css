@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Main Font';
+    src: url("../fonts/Galore.ttf") format('truetype');
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'MKD Font';
+    src: url("../fonts/Oswald-VariableFont_wght.ttf") format('truetype');
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Contact Links';
+    src: url("../fonts/CormorantUnicase-Regular.ttf") format('truetype');
+    font-display: block;
+}

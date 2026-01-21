@@ -1,0 +1,56 @@
+#main {
+    margin-bottom: 0.75rem;
+}
+
+
+.mosaic {
+    height: 100%;
+    transform-origin: center;
+}
+
+.mosaic > .row img {
+    height: calc(100vh / 5);
+    width: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.mosaic .mini {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh / 5);
+    width: auto;
+}
+
+
+.mosaic .mini .row {
+    display: flex;
+    margin: 0;
+    gap: 0;
+}
+
+.mosaic .mini img {
+    height: auto;
+    max-height: calc((100vh / 5) / 3.99);
+    width: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.mosaic > .row > .col-auto > img {
+    transition: opacity 0.3s ease;
+}
+.mosaic > .row > .col-auto > img:hover {
+    opacity: 0.9;
+}
+
+.mini img {
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+.mini img:hover {
+    transform: scale(2.1);
+    border-radius: 7%;
+}
+
+
+

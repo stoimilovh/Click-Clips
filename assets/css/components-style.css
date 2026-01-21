@@ -1,0 +1,162 @@
+/* Language button hover */
+#lang img {
+    border-radius: 3px;
+    transition: transform .5s ease-in-out;
+}
+
+#lang button:hover img {
+    transform: scale(1.2);
+}
+
+/* Menu link base */
+#menu a {
+    font-family: var(--menu-font);
+    font-size: var(--menu-size);
+    text-transform: var(--menu-transform, none);
+    padding-bottom: var(--menu-pad, 0rem);
+
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0 clamp(1rem, 3vw, 3.5rem);
+    position: relative;
+}
+
+/* Language variants */
+.menu-eng {
+    --menu-font: "Main Font";
+    --menu-size: 1.8rem;
+    --menu-pad: 0rem;
+}
+
+.menu-mkd {
+    --menu-font: "MKD Font";
+    --menu-size: 1.5rem;
+    --menu-pad: 0.3rem;
+    --menu-transform: uppercase;
+}
+
+/* Underline */
+#menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: .5rem;
+    width: 100%;
+    background: black;
+    transform: scaleX(0);
+    transition: transform .3s ease;
+}
+
+#menu a.active::after,
+#menu a.inactive:hover::after {
+    transform: scaleX(1);
+}
+
+/* Mobile menu */
+@media (max-width: 576px) {
+
+    #menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu a {
+        width: auto;
+        display: inline-block;
+        text-align: center;
+
+
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity .7s ease, max-height .7s ease;
+        white-space: nowrap;
+        /*line-height: 1.5;*/
+        align-self: center;
+    }
+
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: black;
+        margin-top: -2rem;
+    }
+
+    .menu-eng button {
+        font-family: "Main Font";
+    }
+
+    .menu-mkd button {
+        font-family: "MKD Font";
+        text-transform: uppercase;
+    }
+
+    #menu.show a {
+        opacity: 1;
+        max-height: 10rem;
+    }
+
+    .menu-mkd {
+        --menu-pad: 0rem;
+    }
+
+    .menu-mkd #menu.show a {
+        padding-bottom: 0.3rem;
+    }
+}
+
+/* Right side (flags + mark) */
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: .5rem;
+    margin-right: 1rem;
+}
+
+/* Flags stack */
+.header-lang {
+    display: flex;
+    flex-direction: column;
+    gap: .40rem;
+
+    margin-top: 1.5rem
+}
+
+.header-lang button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    line-height: 0;
+}
+
+/* Flag size */
+.header-lang .flag {
+    width: 2.5rem;
+    height: auto;
+    border-radius: 3px;
+    display: block;
+}
+
+/* Mark (logo) size  */
+.header-mark {
+    max-width: 5.5rem;
+    height: auto;
+    display: block;
+}
+
+/* Big screens sizing */
+@media (min-width: 1920px) {
+    .menu-eng {
+        --menu-size: 2.1rem;
+    }
+
+    .menu-mkd {
+        --menu-size: 1.8rem;
+    }
+}
+

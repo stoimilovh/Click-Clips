@@ -1,0 +1,421 @@
+@font-face {
+    font-family: 'Main Font';
+    src: url("../fonts/Galore.ttf") format('truetype');
+    font-display: block;
+}
+@font-face {
+    font-family: 'MKD Font';
+    src: url("../fonts/Oswald-VariableFont_wght.ttf") format('truetype');
+    font-display: block;
+}
+@font-face {
+    font-family: 'Contact Links';
+    src: url("../fonts/CormorantUnicase-Regular.ttf") format('truetype');
+    font-display: block;
+}
+#contact h1{
+    font-family: 'Main Font';
+}
+.second_font{
+    font-family: "Contact Links";
+    font-size: 1.8rem;
+}
+.t1 p{
+    font-family: "Arial", sans-serif;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 0 5px;
+}
+#about, footer, #contact{
+    font-family: "Arial", sans-serif;
+}
+
+
+/* About Us - Page */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+#clicks{
+    overflow-x: hidden;
+}
+#contact{
+    margin-top: -1rem;
+}
+#contact a{
+    color: black;
+}
+.up{
+    margin-top: -1rem;
+}
+#lang button:hover img {
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+}
+#lang button img {
+    border-radius: 3px;
+}
+.menu-eng #menu a{
+    font-family: Main Font;
+    font-size: 1.8rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0 3.5rem;
+    position: relative;
+    padding-bottom: 0rem;
+}
+.menu-mkd #menu a {
+    font-family: 'MKD Font';
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0 3.5rem;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+#menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.5rem;
+    width: 100%;
+    background: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+#menu a.active::after {
+    transform: scaleX(1);
+}
+#menu a.inactive:hover::after {
+    transform: scaleX(1);
+}
+#clicks, #photos{
+    font-family: Main Font;
+}
+
+
+/*Animacija za sliki od Home Page (pre release version)*/
+.hr > div > img{
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.hr > div > img:hover{
+    opacity: 90%;
+}
+
+
+
+.mini{
+    transition: transform 0.3s ease-in-out;
+}
+.mini img:hover {
+    transform: scale(2.1);
+    border-radius: 7%;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+@media (max-width: 576px) {
+    .menu-mkd #menu a{
+        padding-bottom: 0rem;
+    }
+    .menu-mkd #menu.show a{
+        padding-bottom: 0.3rem;
+    }
+    #contact a{
+        color: #007bff;
+    }
+    .npc{
+        display: none;
+    }
+    .menu-toggle{
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        margin-top: -2rem;
+    }
+    .menu-eng.menu-toggle, .menu-eng button{
+        font-family: Main Font;
+    }
+    .menu-mkd button{
+        font-family: 'MKD Font';
+        text-transform: uppercase;
+    }
+    .mob{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mob img{
+        width: 1.5rem;
+    }
+    header .img{
+        width: 20rem;
+    }
+    #menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #menu a {
+        color: black;
+        opacity: 0;
+        max-height: 0;
+        max-width: 0;
+        transition: opacity 0.7s ease, max-height 0.7s ease, max-width 0.7s ease;
+        white-space: nowrap;
+        display: inline-block;
+    }
+    #menu.show a {
+        opacity: 1;
+        max-height: 10rem;
+        max-width: 100%;
+    }
+    #photos img{
+        max-width: 80%;
+        width: 100vw;
+        height: auto;
+    }
+    #photos .row{
+        justify-content: center;
+    }
+    #photos .col-12{
+        text-align: center;
+    }
+    #main img{
+        width: 2rem;
+    }
+    #main .big>img{
+        width: 4rem;
+    }
+    .second_font{
+        font-size: 1.2rem;
+    }
+    .card{
+        width: 20rem;
+    }
+    .clips-video{
+        border-radius: 1rem;
+    }
+    #about .pet{
+        width: 5rem;
+    }
+    #about .sest{
+        width: 6rem;
+    }
+    #about .sedum{
+        width: 7rem;
+    }
+    #about .osum{
+        width: 8rem;
+    }
+    .mobile-up{
+        margin-top: -1rem;
+    }
+    .mkd-h1{
+        font-size: 2rem;
+    }
+}
+
+#main img{
+    width: 8rem;
+}
+#main .big>img{
+    width: 16rem;
+}
+#main .mini img{
+    width: 2rem;
+}
+
+
+@media (min-width: 1024px){
+    #main img{
+        width: 9vw;
+    }
+    #main .big > img{
+        width: 18vw;
+    }
+    #main .mini img{
+        width: 2.25vw;
+    }
+
+
+    .card{
+        width: 19vw;
+    }
+    .karta {
+        margin-top: -11vw;
+    }
+    .hor{
+        width: 55vw;
+    }
+    .ver{
+        width: 26.7vw;
+    }
+
+
+    .clips-video{
+        border-radius: 1vw;
+    }
+
+
+    .my-photo{
+        width: 26vw;
+    }
+    .logo-photo-about{
+        width: 20vw;
+    }
+    .first-text-eng{
+        width: 34vw;
+    }
+    .second-text-eng{
+        width: 35vw;
+    }
+    .first-text-mkd{
+        width: 35vw;
+    }
+    .second-text-mkd{
+        width: 36vw;
+    }
+    #about .pet{
+        width: 6vw;
+    }
+    #about .sest{
+        width: 7vw;
+    }
+    #about .sedum{
+        width: 8vw;
+    }
+    #about .osum{
+        width: 9vw;
+    }
+    .mobile-up{
+        margin-top: -0.4vw;
+    }
+
+
+    .contact-text{
+        font-size: 19px;
+    }
+    .contact-photo{
+        width: 50vw;
+    }
+    .contact-link{
+        font-size: 30px;
+    }
+    .mkd-h1{
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .menu-eng #menu a{
+        font-size: 2.1rem;
+    }
+    .menu-mkd #menu a {
+        font-size: 1.8rem;
+    }
+
+
+
+    #main img{
+        width: 10vw;
+    }
+    #main .big > img{
+        width: 20vw;
+    }
+    #main .mini img{
+        width: 2.5vw;
+    }
+
+
+    .card{
+        width: 17vw;
+    }
+    .karta {
+        margin-top: -9.9vw;
+    }
+    .hor{
+        width: 55vw;
+    }
+    .ver{
+        width: 26.9vw;
+    }
+
+
+    .clips-video{
+        border-radius: 1vw;
+    }
+
+
+    #about{
+        font-size: 20px;
+    }
+    .my-photo{
+        width: 26vw;
+    }
+    .logo-photo-about{
+        width: 20vw;
+    }
+    .first-text-eng{
+        width: 34vw;
+    }
+    .second-text-eng{
+        width: 35vw;
+    }
+    .first-text-mkd{
+        width: 35vw;
+    }
+    .second-text-mkd{
+        width: 36vw;
+    }
+    #about .pet{
+        width: 5vw;
+    }
+    #about .sest{
+        width: 6vw;
+    }
+    #about .sedum{
+        width: 7vw;
+    }
+    #about .osum{
+        width: 8vw;
+    }
+
+
+    .contact-text{
+        font-size: 20px;
+    }
+    .contact-photo{
+        width: 50vw;
+    }
+    .contact-link{
+        font-size: 35px;
+    }
+    .mkd-h1{
+        font-size: 40px;
+    }
+
+
+    footer{
+        font-size: 18px;
+    }
+}
+@media (width < 400px){
+    .sm-phone{
+        display: none;
+    }
+    .sm-phone-yes{
+        display: block;
+    }
+}
+@media (width >400px){
+    .sm-phone-yes{
+        display: none;
+    }
+}
