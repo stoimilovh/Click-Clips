@@ -1,28 +1,4 @@
-document.addEventListener('DOMContentLoaded', loadHeaderFooter);
 document.addEventListener('DOMContentLoaded', setActiveLink);
-
-
-function loadHeaderFooter() {
-    let lang = localStorage.getItem('selectedLanguage');
-    if (!lang) {
-        lang = 'eng';
-        localStorage.setItem('selectedLanguage', lang);
-    }
-
-    fetch(`/components/header-${lang}.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            setActiveLink();
-        });
-
-    fetch(`/components/footer-${lang}.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-}
-
 
 function setActiveLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'Home.html';
@@ -41,13 +17,10 @@ function setActiveLink() {
     });
 }
 
-
 function setLanguage(lang) {
     localStorage.setItem('selectedLanguage', lang);
     window.location.reload();
 }
-
-
 
 function menuShow() {
     const menu = document.getElementById('menu');

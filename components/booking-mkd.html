@@ -1,0 +1,195 @@
+<main id="main" class="flex-grow-1" style="font-family: 'MKD Font'">
+
+    <h1 class="h1" style="font-family: 'MKD Font'">Побарај понуда</h1>
+
+    <div class="booking-wrap">
+        <div class="booking-card bg-white">
+            <div class="booking-body">
+
+                <form id="bookingForm" class="row g-3" novalidate>
+
+                    <!-- Contact -->
+                    <div class="col-12">
+                        <h4 class="mb-2 text-center">Ваши податоци</h4>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label class="form-label req" for="clientName">Име и презиме</label>
+                        <input class="form-control" id="clientName" name="clientName" autocomplete="name" required/>
+                        <div class="invalid-feedback">Внесете го вашето име и презиме.</div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label class="form-label req" for="clientEmail">Меил адреса</label>
+                        <input class="form-control" id="clientEmail" name="clientEmail" type="email"
+                               autocomplete="email" required/>
+                        <div class="invalid-feedback">Внесете валидна меил адреса.</div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label class="form-label req" for="clientPhone">Телефон</label>
+                        <input class="form-control" id="clientPhone" name="clientPhone" type="tel"
+                               autocomplete="tel" required/>
+                        <div class="invalid-feedback">Внесете телефонски број.</div>
+                    </div>
+
+                    <img class="img-fluid" src="photos/booking/1.jpg" alt=""/>
+
+                    <hr class="my-2"/>
+
+                    <!-- Project details -->
+                    <div class="col-12">
+                        <h4 class="mb-2 text-center">Детали за проектот</h4>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label req" for="serviceType">Тип на услуга</label>
+                        <select class="form-select" id="serviceType" name="serviceType" required>
+                            <option value="" selected disabled>Избери…</option>
+                            <!-- values remain stable for JS -->
+                            <option value="Photography">Фотографија</option>
+                            <option value="Videography">Видео</option>
+                            <option value="Both">Фотографија и Видео</option>
+                        </select>
+                        <div class="invalid-feedback">Изберете услуга.</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label req" for="eventType">Тип на настан</label>
+                        <select class="form-select" id="eventType" name="eventType" required>
+                            <option value="" selected disabled>Избери…</option>
+                            <!-- values remain stable for JS / payload -->
+                            <option value="Birthday">Роденден</option>
+                            <option value="Baptism">Крштевка</option>
+                            <option value="Wedding">Свадба</option>
+                            <option value="Engagement">Запросување</option>
+                            <option value="Concert">Концерт</option>
+                            <option value="Party">Забава</option>
+                            <option value="Corporate event">Деловен настан</option>
+                            <option value="Other">Друго</option>
+                        </select>
+                        <div class="invalid-feedback">Изберете тип на настан.</div>
+                    </div>
+
+                    <div class="col-12 d-none" id="otherEventWrap">
+                        <label class="form-label req" for="eventOther">Друг настан</label>
+                        <input class="form-control" id="eventOther" name="eventOther"
+                               placeholder="Опишете го настанот…"/>
+                        <div class="invalid-feedback">Опишете го настанот.</div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="col-12 col-md-6">
+                        <label class="form-label req" for="city">Град</label>
+                        <input class="form-control" id="city" name="city" required/>
+                        <div class="invalid-feedback">Внесете град.</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="venue">Локација</label>
+                        <input class="form-control" id="venue" name="venue"
+                               placeholder="(опционално)"/>
+                    </div>
+
+                    <!-- Date / Time -->
+                    <div class="col-12 col-md-4">
+                        <label class="form-label req" for="eventDate">Датум</label>
+                        <input class="form-control" id="eventDate" name="eventDate" type="date" required/>
+                        <div class="invalid-feedback">Изберете валиден датум.</div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label class="form-label req" for="eventTime">Почеток</label>
+                        <input class="form-control" id="eventTime" name="eventTime" type="time" step="60" required/>
+                        <div class="invalid-feedback">Внесете валидно време.</div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label class="form-label req" for="coverageHours">Времетраење на ангажманот (часови)</label>
+                        <input class="form-control" id="coverageHours" name="coverageHours"
+                               type="number" min="1" max="24" required/>
+                        <div class="invalid-feedback">Внесете број на часови.</div>
+                    </div>
+
+                    <img class="img-fluid" src="photos/booking/2.jpg" alt=""/>
+
+                    <!--  VIDEO SECTION  -->
+                    <div id="videoSection" class="d-none col-12">
+
+                        <hr class="my-2"/>
+
+                        <h4 class="mb-2 text-center">Видео</h4>
+
+                        <div class="row g-3">
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="videoType">Тип на видео</label>
+                                <select class="form-select" id="videoType" name="videoType">
+                                    <option value="" selected>—</option>
+                                    <option value="Short highlight video">Кратко highlight видео</option>
+                                    <option value="Full event video">Целосно видео од настан</option>
+                                    <option value="Both">Двете</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="videoDuration">Времетраење на видеото</label>
+                                <input class="form-control" id="videoDuration" name="videoDuration"
+                                       placeholder="пр. 30–60s reel, 2–3 мин. highlight…"/>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="videoFormat">Формат (вертикално/хоризонтално)</label>
+                                <select class="form-select" id="videoFormat" name="videoFormat">
+                                    <option value="" selected>—</option>
+                                    <option value="Vertical">Вертикално</option>
+                                    <option value="Horizontal">Хоризонтално</option>
+                                    <option value="Both">Двете</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="usage">Намена</label>
+                                <select class="form-select" id="usage" name="usage">
+                                    <option value="" selected>—</option>
+                                    <option value="Personal">Лична</option>
+                                    <option value="Social media">Социјални мрежи</option>
+                                    <option value="Commercial">Комерцијална</option>
+                                    <option value="Promotional">Промотивна</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr class="my-2"/>
+
+                    <!-- Extra notes -->
+                    <div class="col-12">
+                        <h4 class="mb-2 text-center">Дополнителни информации</h4>
+                    </div>
+
+                    <div class="col-12">
+                        <input class="form-control" id="notes" name="notes"
+                               placeholder="Распоред, правила, рокови и слично..."/>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="col-12 d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-dark btn-wide">
+                            Испрати барање
+                        </button>
+                    </div>
+
+                    <div class="col-12">
+                        <div id="successBox" class="success-box bg-white">
+                            *Меилот е подготвена во вашата меил апликација. Кликнете „Send“ за да го испратите барањето и да добиете понуда.
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</main>
