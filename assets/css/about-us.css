@@ -1,0 +1,173 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#about {
+    font-family: Arial, sans-serif;
+}
+
+#about img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-top {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    width: 100%;
+}
+
+.my-photo {
+    width: 22vw;
+    max-width: 420px;
+    max-height: 560px;
+    object-fit: cover;
+}
+
+.about-right {
+    width: 35vw;
+    min-width: 320px;
+    text-align: center;
+}
+
+.logo-photo-about {
+    width: 20vw;
+    max-width: 420px;
+    margin: 0 auto 0.75rem auto;
+}
+
+.about-divider {
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto 1rem auto;
+    opacity: 0.35;
+}
+
+.about-paragraph {
+    line-height: 1.75;
+    letter-spacing: 0.1px;
+    margin-bottom: 1.25rem;
+}
+
+.about-middle {
+    margin-top: 1.5rem;
+}
+
+.about-middle .about-paragraph {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-signature {
+    width: 30vw;
+    margin-top: -1rem;
+    margin-right: 15rem;
+}
+
+.about-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-social img {
+    width: auto;
+    height: auto;
+    max-width: 140px;
+    display: block;
+    margin: 0 auto;
+}
+
+#about .pet   { width: 7vw }
+#about .sest  { width: 8vw}
+#about .sedum { width: 9vw}
+#about .osum  { width: 10vw}
+
+.mobile-up {
+    margin-top: 0;
+}
+
+#about a img {
+    transition: opacity 0.2s ease;
+}
+
+#about a:hover img {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .my-photo {
+        width: 100vw;
+        max-width: 420px;
+        max-height: 560px;
+        object-fit: cover;
+    }
+
+    .about-top {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .about-right {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .logo-photo-about {
+        width: 70%;
+        max-width: 320px;
+    }
+
+    .about-social {
+        justify-content: center !important;
+    }
+
+    .about-social .col-12 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .about-social img {
+        max-width: 120px;
+    }
+
+
+}
+
+@media (max-width: 576px) {
+    .about-middle {
+        margin-top: -0.1rem;
+    }
+
+    .about-paragraph {
+        line-height: 1.8;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #about .pet   { width: 6rem; }
+    #about .sest  { width: 7rem; }
+    #about .sedum { width: 8rem; }
+    #about .osum  { width: 9rem; }
+
+    .about-social img {
+        max-width: 140px;
+    }
+
+    .mobile-up {
+        margin-top: 0;
+    }
+
+    .links{
+        margin-top: 1.5rem;
+        width: 100%;
+    }
+
+}
