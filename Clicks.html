@@ -1,102 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clicks</title>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="photos/logo.png">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicks</title>
 
-<script src="script.js"> </script>
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/bootstrap/js/bootstrap.js" defer></script>
+
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/clicks.css">
+    <link rel="stylesheet" href="./assets/css/components-style.css">
+    <link rel="icon" href="../photos/logo.png">
+
+    <meta property="og:image" content="https://www.clicknclips.mk/photos/Logo/Main.jpg"/>
+</head>
 
 <body class="flex-container">
 
 <div id="header-placeholder"></div>
 
-<div id="clicks">
-  <div class="row justify-content-center ">
-<!--    <h1 class="d-md-none d-lg-none d-block text-center">Clicks</h1>-->
-    <div class="row justify-content-center my-md-3  my-0">
-      <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center">
-        <div class="card" style="text-align: center">
-          <img class="card-img-top" src="photos/Cards/nadalina.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="h5">A Night at the Movies with Nadalina</h5>
-            <a href="Nadalina.html" class="btn btn-dark">Cinema Dreams</a>
-          </div>
+<main id="main">
+
+    <section class="clicks-wrap my-md-3 my-0">
+        <!-- Nadalina -->
+        <div class="click-item">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/nadalina.jpg" alt="Nadalina">
+                <div class="card-body">
+                    <h5>A Night at the Movies with Nadalina</h5>
+                    <a href="Nadalina.html" class="btn btn-dark">Cinema Dreams</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center">
-        <div class="card" style="text-align: center">
-          <img class="card-img-top" src="photos/Cards/karolina.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="h5">Under the Spotlight</h5>
-            <a href="Karolina%20Gocheva.html" class="btn btn-dark">Karolina Gocheva</a>
-          </div>
+
+        <!-- Karolina -->
+        <div class="click-item">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/karolina.jpg" alt="Karolina Gocheva">
+                <div class="card-body">
+                    <h5>Under the Spotlight</h5>
+                    <a href="Karolina%20Gocheva.html" class="btn btn-dark">Karolina Gocheva</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center">
-        <div class="card" style="text-align: center">
-          <img class="card-img-top" src="photos/Cards/fiona3.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="h5">Fiona and Sinatra’s Melody</h5>
-            <a href="Fiona.html" class="btn btn-dark">December Story</a>
-          </div>
+
+        <!-- Fiona -->
+        <div class="click-item">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/fiona3.jpg" alt="Fiona">
+                <div class="card-body">
+                    <h5>Fiona and Sinatra’s Melody</h5>
+                    <a href="Fiona.html" class="btn btn-dark">December Story</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center">
-        <div class="card" style="text-align: center">
-          <img class="card-img-top" src="photos/Cards/club.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="h5">Rhythms of the Nightlife</h5>
-            <a href="Club.html" class="btn btn-dark">on the Dancefloor</a>
-          </div>
+
+        <!-- Club -->
+        <div class="click-item">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/club.jpg" alt="Club">
+                <div class="card-body">
+                    <h5>Rhythms of the Nightlife</h5>
+                    <a href="Club.html" class="btn btn-dark">On the Dancefloor</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center">
-      <div class="card" style="text-align: center">
-        <img class="card-img-top" src="photos/Cards/egypt.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="h5">The Credle of Civilization</h5>
-          <a href="Egypt.html" class="btn btn-dark" onclick="setParentPage('clicks')">Egypt, Cairo</a>
+
+        <!-- Egypt -->
+        <div class="click-item">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/egypt.jpg" alt="Egypt">
+                <div class="card-body">
+                    <h5>The Cradle of Civilization</h5>
+                    <a href="Egypt.html" class="btn btn-dark">Egypt, Cairo</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center karta">
-      <div class="card" style="text-align: center">
-        <img class="card-img-top" src="photos/Cards/greece.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="h5">moments in Greece</h5>
-          <a href="Greece.html" class="btn btn-dark">Thessaloniki & Kavala</a>
+
+        <!-- Greece -->
+        <div class="click-item lift">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/greece.jpg" alt="Greece">
+                <div class="card-body">
+                    <h5>Moments in Greece</h5>
+                    <a href="Greece.html" class="btn btn-dark">Thessaloniki & Kavala</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center karta">
-      <div class="card" style="text-align: center;">
-        <img class="card-img-top" src="photos/Cards/vienna.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="h5">Vienna's Alure</h5>
-          <a href="Vienna.html" class="btn btn-dark">Vienna, Austria</a>
+
+        <!-- Vienna -->
+        <div class="click-item lift">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/vienna.jpg" alt="Vienna">
+                <div class="card-body">
+                    <h5>Vienna’s Allure</h5>
+                    <a href="Vienna.html" class="btn btn-dark">Vienna, Austria</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-auto py-3 py-md-0 d-flex d-sm-block justify-content-center">
-      <div class="card" style="text-align: center;">
-        <img class="card-img-top" src="photos/Cards/sofia.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="h5">early spring days in Sofia</h5>
-          <a href="Sofia.html" class="btn btn-dark">Sofia, Bulgaria</a>
+
+        <!-- Sofia -->
+        <div class="click-item">
+            <div class="card">
+                <img class="card-img-top" src="photos/Cards/sofia.jpg" alt="Sofia">
+                <div class="card-body">
+                    <h5>Early Spring Days in Sofia</h5>
+                    <a href="Sofia.html" class="btn btn-dark">Sofia, Bulgaria</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
+
+
+    <nav class="pagination-edit d-flex justify-content-center mt-4">
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+</main>
 
 <div id="footer-placeholder"></div>
 
-<script src="bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

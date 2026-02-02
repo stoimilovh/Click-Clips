@@ -1,0 +1,107 @@
+h1{
+    text-align: center;
+}
+
+.booking-wrap{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.booking-card{
+    margin-top: -1rem;
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+
+.booking-body{
+    padding: 1.25rem 1rem 1.5rem;
+}
+
+.booking-body h5{
+    display: block;
+    white-space: nowrap;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 1.25rem 0 .75rem;
+    margin-left: .25rem;
+}
+
+.soft-note{
+    font-size: .9rem;
+    opacity: .7;
+    margin-bottom: .5rem;
+}
+
+.booking-body hr{
+    opacity: .12;
+    margin: 1rem 0 !important;
+}
+
+#bookingForm{
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.form-label{
+    margin-bottom: .35rem;
+    font-size: .92rem;
+    opacity: .9;
+}
+
+.req::after{
+    content:" *";
+    font-weight: 700;
+}
+
+.form-control,
+.form-select{
+    border-radius: 14px;
+    padding: .6rem .9rem;
+    font-size: .95rem;
+    border: 1px solid rgba(0,0,0,.14);
+}
+
+.form-control:focus,
+.form-select:focus{
+    box-shadow: 0 0 0 .2rem rgba(0,0,0,.08);
+    border-color: rgba(0,0,0,.28);
+}
+
+.row.g-3{
+    --bs-gutter-y: 1.1rem;
+}
+
+.btn-wide{
+    width: 100%;
+    border-radius: 14px;
+    padding: .7rem 1.2rem;
+    font-size: .98rem;
+}
+
+@media (min-width: 768px){
+    .btn-wide{
+        width: auto;
+        min-width: 220px;
+    }
+}
+
+.success-box{
+    display: none;
+    border-radius: 14px;
+    padding: 0.9rem 1.1rem;
+    margin-top: 0.75rem;
+    text-align: center;
+
+    /*border: 1px solid #2ecc71;*/
+    color: black;
+
+    /*box-shadow: 0 6px 18px rgba(46, 204, 113, 0.15);*/
+    font-weight: 500;
+}
+
+.success-box.show{
+    display: block;
+}

@@ -3,11 +3,6 @@
     margin-bottom: 0.75rem;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .clips-video{
     border-radius: 1rem;
 }

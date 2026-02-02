@@ -1,0 +1,54 @@
+#main{
+    margin-top: -0.75rem;
+    overflow-x: hidden;
+    font-family: 'Main Font', sans-serif;
+}
+
+.clicks-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.click-item{
+    flex: 0 0 auto;
+}
+
+.card{
+    text-align: center;
+    width: 19vw;
+    max-width: 360px;
+    min-width: 260px;
+}
+
+@media (min-width: 1024px){
+    .click-item.lift{
+        margin-top: -11vw;
+    }
+}
+
+@media (min-width: 1920px){
+    .click-item.lift{
+        margin-top: -9.9vw;
+    }
+}
+
+@media (max-width: 576px){
+    .card{
+        width: 20rem;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .click-item.lift{
+        margin-top: 0;
+    }
+}
+
+.pagination-edit{
+    margin-top: 2rem;
+    padding-top: 0;
+}
