@@ -1,6 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-
+function initBookingForm() {
     const form = document.getElementById("bookingForm");
+    if (!form || form.dataset.inited === "1") return;
+    form.dataset.inited = "1";
+
     const successBox = document.getElementById("successBox");
 
     const eventType = document.getElementById("eventType");
@@ -18,62 +20,58 @@ document.addEventListener("DOMContentLoaded", () => {
     const eventDate = document.getElementById("eventDate");
     const eventTime = document.getElementById("eventTime");
 
+    if (!serviceType || !videoSection || !eventDate || !eventTime) return;
 
     function setMinDateToday() {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-
         const yyyy = today.getFullYear();
         const mm = String(today.getMonth() + 1).padStart(2, "0");
         const dd = String(today.getDate()).padStart(2, "0");
-
         eventDate.min = `${yyyy}-${mm}-${dd}`;
     }
 
     function validateEventDate() {
-        if (!eventDate.value) {
-            eventDate.setCustomValidity("");
-            return;
-        }
-
-        if (eventDate.value < eventDate.min) {
-            eventDate.setCustomValidity("Please choose today or a future date.");
-        } else {
-            eventDate.setCustomValidity("");
-        }
+        if (!eventDate.value) return eventDate.setCustomValidity("");
+        eventDate.setCustomValidity(
+            eventDate.value < eventDate.min ? "Please choose today or a future date." : ""
+        );
     }
-
-    setMinDateToday();
-    eventDate.addEventListener("change", validateEventDate);
-
 
     function validateEventTime() {
         const value = (eventTime.value || "").trim();
-
-        if (!value) {
-            eventTime.setCustomValidity("");
-            return;
-        }
+        if (!value) return eventTime.setCustomValidity("");
 
         const match = value.match(/^(\d{2}):(\d{2})$/);
-        if (!match) {
-            eventTime.setCustomValidity("Please use HH:MM (00:00–23:59).");
-            return;
-        }
+        if (!match) return eventTime.setCustomValidity("Please use HH:MM (00:00–23:59).");
 
         const hours = Number(match[1]);
         const minutes = Number(match[2]);
 
-        if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
-            eventTime.setCustomValidity("Please enter a valid time (00:00–23:59).");
-        } else {
-            eventTime.setCustomValidity("");
+        eventTime.setCustomValidity(
+            hours > 23 || minutes > 59 ? "Please enter a valid time (00:00–23:59)." : ""
+        );
+    }
+
+    function toggleVideoSection() {
+        const show = serviceType.value === "Videography" || serviceType.value === "Both";
+        videoSection.classList.toggle("d-none", !show);
+
+        if (!show) {
+            videoType.value = "";
+            videoDuration.value = "";
+            videoFormat.value = "";
+            usage.value = "";
         }
     }
 
+    setMinDateToday();
+    validateEventDate();
+    toggleVideoSection();
+
+    eventDate.addEventListener("change", validateEventDate);
     eventTime.addEventListener("input", validateEventTime);
     eventTime.addEventListener("blur", validateEventTime);
-
 
     eventType.addEventListener("change", () => {
         const isOther = eventType.value === "Other";
@@ -86,31 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
-    function toggleVideoSection() {
-        const value = serviceType.value;
-        const show = value === "Videography" || value === "Both";
-
-        videoSection.classList.toggle("d-none", !show);
-
-        if (!show) {
-            videoType.value = "";
-            videoDuration.value = "";
-            videoFormat.value = "";
-            usage.value = "";
-        }
-    }
-
     serviceType.addEventListener("change", toggleVideoSection);
-    toggleVideoSection();
-
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        successBox.classList.remove("show");
+        successBox?.classList.remove("show");
 
         setMinDateToday();
-
         validateEventDate();
         validateEventTime();
 
@@ -120,10 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const isOther = form.eventType.value === "Other";
-        const finalEventType = isOther
-            ? (eventOther.value.trim() || "Other")
-            : form.eventType.value;
-
+        const finalEventType = isOther ? (eventOther.value.trim() || "Other") : form.eventType.value;
         const showVideo = form.serviceType.value === "Videography" || form.serviceType.value === "Both";
 
         const lines = [
@@ -151,10 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
 
-        lines.push(
-            ``,
-            `Notes: ${form.notes.value.trim() || "-"}`
-        );
+        lines.push(``, `Notes: ${form.notes.value.trim() || "-"}`);
 
         const to = "click.n.clips9@gmail.com";
         const subject = `Booking request - ${form.clientName.value.trim()} (${form.eventDate.value})`;
@@ -165,10 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
             `?subject=${encodeURIComponent(subject)}` +
             `&body=${encodeURIComponent(body)}`;
 
-
-        successBox.classList.add("show");
-        successBox.scrollIntoView({ behavior: "smooth", block: "center" });
-
+        successBox?.classList.add("show");
+        successBox?.scrollIntoView({ behavior: "smooth", block: "center" });
 
         form.reset();
         form.classList.remove("was-validated");
@@ -179,9 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
         eventDate.setCustomValidity("");
         eventTime.setCustomValidity("");
 
-
         setTimeout(() => {
             window.location.href = mailto;
         }, 300);
     });
-});
+}
+
+document.addEventListener("DOMContentLoaded", initBookingForm);

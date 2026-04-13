@@ -9,13 +9,24 @@ function loadPlaceholders() {
 
     const placeholders = document.querySelectorAll('[id$="-placeholder"]');
 
-    placeholders.forEach((el) => {
+    function runComponentInit(placeholderId) {
+        if (placeholderId === "header-placeholder" && typeof window.setActiveLink === "function") {
+            window.setActiveLink();
+        }
+
+        if (placeholderId === "booking-placeholder" && typeof window.initBookingForm === "function") {
+            window.initBookingForm();
+        }
+    }
+
+    document.dispatchEvent(new CustomEvent("components:loading", { detail: { lang } }));
+
+    const jobs = Array.from(placeholders).map((el) => {
         const id = el.id;
         const name = id.replace(/-placeholder$/, "");
-
         const url = `/components/${name}-${lang}.html`;
 
-        fetch(url)
+        return fetch(url)
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
                 return res.text();
@@ -23,9 +34,7 @@ function loadPlaceholders() {
             .then((html) => {
                 el.innerHTML = html;
 
-                if (id === "header-placeholder" && typeof window.setActiveLink === "function") {
-                    window.setActiveLink();
-                }
+                runComponentInit(id);
             })
             .catch((err) => {
                 console.error("Component load failed:", err);
@@ -37,16 +46,9 @@ function loadPlaceholders() {
             });
     });
 
-    document.dispatchEvent(new CustomEvent("components:loading", { detail: { lang } }));
-
-    Promise.all(
-        Array.from(placeholders).map((el) => {
-            const name = el.id.replace(/-placeholder$/, "");
-            const url = `/components/${name}-${lang}.html`;
-            return fetch(url).then((r) => (r.ok ? r.text() : ""));
-        })
-    ).then(() => {
+    Promise.all(jobs).then(() => {
         document.dispatchEvent(new CustomEvent("components:loaded", { detail: { lang } }));
+
         if (typeof window.setActiveLink === "function") window.setActiveLink();
     });
 }

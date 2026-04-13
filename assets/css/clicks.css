@@ -4,6 +4,13 @@
     font-family: 'Main Font', sans-serif;
 }
 
+/* keep nav on top if anything overlaps visually */
+#clicksSections{
+    position: relative;
+    z-index: 5;
+}
+
+/* CARDS */
 .clicks-wrap{
     display: flex;
     flex-wrap: wrap;
@@ -24,15 +31,17 @@
     min-width: 260px;
 }
 
+/* ✅ Lift using transform (NO layout shift, NO pushing nav/cards down) */
 @media (min-width: 1024px){
     .click-item.lift{
-        margin-top: -11vw;
+        transform: translateY(-11vw);
+        will-change: transform;
     }
 }
 
 @media (min-width: 1920px){
     .click-item.lift{
-        margin-top: -9.9vw;
+        transform: translateY(-9.9vw);
     }
 }
 
@@ -44,11 +53,53 @@
     }
 
     .click-item.lift{
-        margin-top: 0;
+        transform: none;
     }
 }
 
 .pagination-edit{
     margin-top: 2rem;
     padding-top: 0;
+}
+
+/* STYLE FOR THE LOADED PHOTOS */
+
+#galleryRow{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+#galleryRow > div{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px){
+    #galleryRow > div{
+        flex: 0 0 calc(50% - 0.625rem);
+        max-width: calc(50% - 0.625rem);
+    }
+}
+
+#galleryRow img.ver{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+#photos{
+    padding-bottom: 0rem;
+}
+
+#clicksSections .page-item.active .page-link{
+    background: #000;
+    border-color: #000;
+    color: #fff;
 }
